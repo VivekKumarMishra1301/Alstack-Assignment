@@ -31,7 +31,8 @@ const userSchema = new mongoose.Schema({
         type:String
     },
     lastActive: {
-        type:Date
+        type: Date,
+        default:Date.now()
     }
 
 },{timestamps:true});
