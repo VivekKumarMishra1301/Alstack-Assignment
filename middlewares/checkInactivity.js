@@ -5,15 +5,15 @@ import asyncHandler from 'express-async-handler';
 export const activityMonitoring = asyncHandler(async (req, res, next) => {
    
         try {
-            const currentTime = new Date(); // Current time as a Date object
-console.log(currentTime);
+            const currentTime = new Date(); 
+            console.log(currentTime);
 
-const lastActiveTime = new Date(req.user.lastActive); // Convert lastActive to a Date object
-console.log(lastActiveTime);
+            const lastActiveTime = new Date(req.user.lastActive); 
+            console.log(lastActiveTime);
 
-const differenceInMilliseconds = Math.abs(currentTime - lastActiveTime); // Difference in milliseconds
-const differenceInMinutes = differenceInMilliseconds / (1000 * 60); // Convert milliseconds to minutes
-console.log(differenceInMinutes);
+            const differenceInMilliseconds = Math.abs(currentTime - lastActiveTime); 
+            const differenceInMinutes = differenceInMilliseconds / (1000 * 60); 
+             console.log(differenceInMinutes);
             if (differenceInMinutes > 2) {
                 
 
