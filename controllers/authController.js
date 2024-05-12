@@ -52,7 +52,7 @@ export const loginUser = asyncHandler(async (req, res) => {
         }
         
         const updateRefreshToken = await User.findByIdAndUpdate(user._id, {
-            $set:{refreshToken:refreshToken}
+            $set:{refreshToken:refreshToken,lastActive:Date.now()}
         })
 
         return res.status(200).cookie("accessToken", accessToken, options)
